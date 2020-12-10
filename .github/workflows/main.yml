@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install zip
-        run: apt-get install zip unzip -y 
+        run: sudo apt-get install zip unzip -y 
       - name: Zip the files
         run: zip upload.zip *
 
