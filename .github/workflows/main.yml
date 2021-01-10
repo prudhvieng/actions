@@ -5,10 +5,10 @@ name: CI
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  #push:
+   # branches: [ main ]
+  #pull_request:
+  #  branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -27,13 +27,15 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install zip
-        run: sudo apt-get install zip unzip -y 
+        run: sudo apt-get install zip unzip -y
+      - name: download files
+        run: wget https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FImage&psig=AOvVaw1ezFUvVrGdNgZ0Qznob3LN&ust=1610363808521000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLjwy-ieke4CFQAAAAAdAAAAABAD 
       - name: Zip the files
         run: zip upload.zip *
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run: aws s3 cp upload.zip s3://actionstest/
+        run: aws s3 cp upload.zip s3://actionstest12/
         env:
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY}} 
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_KEY}} 
