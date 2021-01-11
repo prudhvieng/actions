@@ -45,7 +45,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           ls -la
-          echo $pwd
+          pwd
           aws s3 cp upload.zip s3://actiontest12/
         env:
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY}} 
