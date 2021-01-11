@@ -29,6 +29,7 @@ jobs:
         run: |
           jfrog rt c jfrog --url http://3.236.20.252:8082/artifactory/ --user ${{ secrets.JFROG_USER }} --password "${{ secrets.JFROG_PASSWORD }}"
           jfrog rt ping
+          pwd
       - name: Download artifact from jfrog
         run: jfrog rt dl uploadartifact/*
       - uses: actions/checkout@v2
