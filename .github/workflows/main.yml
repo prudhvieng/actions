@@ -32,7 +32,7 @@ jobs:
           pwd
       - uses: actions/checkout@v2    
       - name: Download artifact from jfrog
-        run: jfrog rt dl uploadartifact/*
+        run: jfrog rt dl uploadartifact/*  # jfrog rt dl  "my-local-repo/all-my-frogs/" --sort-by=created --sort-order=desc --limit=1
 
       # Runs a single command using the runners shell
       - name: Install zip
